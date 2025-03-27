@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.frontend.controller.FormEmpresaController"
+      spacing="10" style="-fx-padding: 20;">
+
+    <Label text="Formulario de Empresa" style="-fx-font-size: 16; -fx-font-weight: bold;"/>
+
+    <GridPane hgap="10" vgap="10">
+        <Label text="Nombre:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <TextField fx:id="txtNombre" GridPane.rowIndex="0" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS"/>
+
+        <Label text="Dirección:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <TextField fx:id="txtDireccion" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+        <Label text="País:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+        <TextField fx:id="txtPais" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+    </GridPane>
+
+    <HBox spacing="10" alignment="CENTER_RIGHT">
+        <Button text="Cancelar" onAction="#handleCancelar"
+                style="-fx-background-color: #d63031; -fx-text-fill: white;"/>
+        <Button text="Guardar" onAction="#handleGuardar"
+                style="-fx-background-color: #00b894; -fx-text-fill: white;"/>
+    </HBox>
+</VBox>

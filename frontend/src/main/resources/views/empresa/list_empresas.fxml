@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.frontend.controller.EmpresaController"
+      style="-fx-background-color: #f5f7fa; -fx-spacing: 0;">
+
+
+    <HBox style="-fx-background-color: white; -fx-padding: 15; -fx-spacing: 20; -fx-alignment: CENTER_LEFT; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 0, 2, 5, 0);">
+        <ImageView fitHeight="32" fitWidth="32">
+            <image>
+                <Image url="@/images/icon_empresas.png" />
+            </image>
+        </ImageView>
+        <Label text="Gestión de Empresas" style="-fx-font-size: 20; -fx-font-weight: bold; -fx-text-fill: #2d3436;"/>
+        <Region HBox.hgrow="ALWAYS"/>
+        <Button text="Nueva Empresa" style="-fx-background-color: #00b894; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 8 15; -fx-background-radius: 6;"/>
+    </HBox>
+
+
+    <HBox style="-fx-background-color: #dfe6e9; -fx-padding: 10; -fx-spacing: 10; -fx-alignment: CENTER_LEFT;">
+        <Button text="Editar" style="-fx-background-color: #0984e3; -fx-text-fill: white; -fx-padding: 6 12; -fx-background-radius: 4;"/>
+        <Button text="Eliminar" style="-fx-background-color: #d63031; -fx-text-fill: white; -fx-padding: 6 12; -fx-background-radius: 4;"/>
+        <Button text="Detalles" style="-fx-background-color: #636e72; -fx-text-fill: white; -fx-padding: 6 12; -fx-background-radius: 4;"/>
+        <Region HBox.hgrow="ALWAYS"/>
+        <TextField promptText="Buscar empresas..." style="-fx-pref-width: 250; -fx-padding: 6 10; -fx-background-radius: 4;"/>
+        <Button text="Buscar" style="-fx-background-color: #636e72; -fx-text-fill: white; -fx-padding: 6 12; -fx-background-radius: 4;"/>
+    </HBox>
+
+
+    <TableView fx:id="tableEmpresas" style="-fx-background-color: transparent; -fx-padding: 15;">
+        <columns>
+            <TableColumn fx:id="colId" text="ID" style="-fx-font-weight: bold;" prefWidth="60"/>
+            <TableColumn fx:id="colNombre" text="Nombre" style="-fx-font-weight: bold;" prefWidth="200"/>
+            <TableColumn fx:id="colDireccion" text="Dirección" style="-fx-font-weight: bold;" prefWidth="300"/>
+            <TableColumn fx:id="colPais" text="País" style="-fx-font-weight: bold;" prefWidth="120"/>
+        </columns>
+    </TableView>
+
+
+    <HBox style="-fx-background-color: white; -fx-padding: 10; -fx-spacing: 10; -fx-alignment: CENTER;">
+        <Button text="Anterior" style="-fx-background-color: #b2bec3; -fx-text-fill: white; -fx-padding: 5 10;"/>
+        <Label text="Página 1 de 5" style="-fx-text-fill: #636e72;"/>
+        <Button text="Siguiente" style="-fx-background-color: #636e72; -fx-text-fill: white; -fx-padding: 5 10;"/>
+    </HBox>
+</VBox>
