@@ -1,53 +1,39 @@
 package com.backend.controller;
 
-
 import com.backend.model.Empresa;
-
 import com.backend.service.EmpresaService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import java.util.List;
+
+
 
 @RestController
-@RequestMapping("/empresas")
+@RequestMapping("/empresa")
 public class EmpresaController {
+
     @Autowired
     private EmpresaService empresaService;
 
-    @GetMapping
-    public List<Empresa> getAllEmpresas() {
-        return empresaService.findAll();
-    }
-
-    @GetMapping("/{id}")
-    public ResponseEntity<Empresa> getEmpresaById(@PathVariable Integer id) {
-        return empresaService.findById(id)
-                .map(ResponseEntity::ok)
-                .orElseGet(() -> ResponseEntity.notFound().build());
-    }
 
     @PostMapping
-    public Empresa createEmpresa(@RequestBody Empresa empresa) {
-        return empresaService.save(empresa);
+    public ResponseEntity<?> saveEmpresa(@RequestBody Empresa empresa) {
+        return new ResponseEntity<>(
+                empresaService.saveEmpresa(empresa),
+                HttpStatus.CREATED);
     }
 
-    @PutMapping("/{id}")
-    public ResponseEntity<Empresa> updateEmpresa(@PathVariable Integer id, @RequestBody Empresa empresaDetails) {
-        return empresaService.findById(id).map(empresa -> {
-            empresa.setRazonSocial(empresaDetails.getRazonSocial());
-            empresa.setDireccionFiscal(empresaDetails.getDireccionFiscal());
-            empresa.setPais(empresaDetails.getPais());
-            return ResponseEntity.ok(empresaService.save(empresa));
-        }).orElseGet(() -> ResponseEntity.notFound().build());
+
+    @DeleteMapping("/{id_empresa}")
+    public ResponseEntity<?> deleteEmpresa(@PathVariable Long id_empresa) {
+        empresaService.deleteEmpresa(id_empresa);
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 
-    @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteEmpresa(@PathVariable Integer id) {
-        if (empresaService.findById(id).isPresent()) {
-            empresaService.deleteById(id);
-            return ResponseEntity.noContent().build();
-        }
-        return ResponseEntity.notFound().build();
+
+    @GetMapping
+    public ResponseEntity<?> getAllEmpresas() {
+        return ResponseEntity.ok(empresaService.findAllEmpresas());
     }
 }

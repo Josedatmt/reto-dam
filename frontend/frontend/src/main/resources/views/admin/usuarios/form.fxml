@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.paint.*?>
+
+<VBox xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+      spacing="20" prefWidth="500" alignment="TOP_CENTER" style="-fx-padding: 30; -fx-background-color: #f5f7fa;">
+
+
+    <Label text="Registro de Usuario" style="-fx-font-size: 24px;">
+        <font>
+            <Font name="Segoe UI Semibold" size="24.0" />
+        </font>
+        <textFill>
+            <LinearGradient startX="0.0" startY="0.0" endX="1.0" endY="0.0">
+                <stops>
+                    <Stop color="#4b6cb7" />
+                    <Stop color="#182848" offset="1.0" />
+                </stops>
+            </LinearGradient>
+        </textFill>
+        <effect>
+            <DropShadow color="rgba(0,0,0,0.05)" radius="5" spread="0.3" />
+        </effect>
+    </Label>
+
+
+    <VBox style="-fx-background-color: white; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #e0e3e8; -fx-padding: 25; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 10, 0, 0, 3);" spacing="15">
+
+
+        <GridPane hgap="15" vgap="15">
+            <columnConstraints>
+                <ColumnConstraints hgrow="NEVER" minWidth="100" />
+                <ColumnConstraints hgrow="ALWAYS" />
+            </columnConstraints>
+
+            <Label text="Nombre:" style="-fx-font-size: 14px; -fx-text-fill: #4a5568;" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+            <TextField fx:id="txtNombre" promptText="Ingrese nombre" GridPane.rowIndex="0" GridPane.columnIndex="1"
+                       style="-fx-background-radius: 4; -fx-border-radius: 4; -fx-border-color: #cbd5e0; -fx-padding: 8 12; -fx-font-size: 14px;"/>
+
+
+            <Label text="Apellidos:" style="-fx-font-size: 14px; -fx-text-fill: #4a5568;" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+            <TextField fx:id="txtApellidos" promptText="Ingrese apellidos" GridPane.rowIndex="1" GridPane.columnIndex="1"
+                       style="-fx-background-radius: 4; -fx-border-radius: 4; -fx-border-color: #cbd5e0; -fx-padding: 8 12; -fx-font-size: 14px;"/>
+
+
+            <Label text="Email:" style="-fx-font-size: 14px; -fx-text-fill: #4a5568;" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+            <TextField fx:id="txtEmail" promptText="Ingrese email" GridPane.rowIndex="2" GridPane.columnIndex="1"
+                       style="-fx-background-radius: 4; -fx-border-radius: 4; -fx-border-color: #cbd5e0; -fx-padding: 8 12; -fx-font-size: 14px;"/>
+
+
+            <Label text="Contraseña:" style="-fx-font-size: 14px; -fx-text-fill: #4a5568;" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+            <PasswordField fx:id="txtPassword" promptText="Ingrese contraseña" GridPane.rowIndex="3" GridPane.columnIndex="1"
+                           style="-fx-background-radius: 4; -fx-border-radius: 4; -fx-border-color: #cbd5e0; -fx-padding: 8 12; -fx-font-size: 14px;"/>
+
+
+            <Label text="Perfil:" style="-fx-font-size: 14px; -fx-text-fill: #4a5568;" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+            <ComboBox fx:id="comboPerfiles" promptText="Seleccione perfil" GridPane.rowIndex="4" GridPane.columnIndex="1"
+                      style="-fx-background-radius: 4; -fx-border-radius: 4; -fx-border-color: #cbd5e0; -fx-padding: 8 12; -fx-font-size: 14px;"/>
+        </GridPane>
+
+
+        <HBox spacing="15" alignment="CENTER_RIGHT" style="-fx-padding: 10 0 0 0;">
+            <Button text="Cancelar"
+                    style="-fx-background-color: transparent; -fx-text-fill: #e53e3e; -fx-border-color: #e53e3e; -fx-border-radius: 4; -fx-background-radius: 4; -fx-padding: 8 24; -fx-cursor: hand; -fx-font-size: 14px;"
+            />
+
+            <Button text="Guardar" defaultButton="true"
+                    style="-fx-background-color: #4b6cb7; -fx-text-fill: white; -fx-background-radius: 4; -fx-padding: 8 24; -fx-font-weight: bold; -fx-cursor: hand; -fx-font-size: 14px;"
+            />
+        </HBox>
+    </VBox>
+</VBox>

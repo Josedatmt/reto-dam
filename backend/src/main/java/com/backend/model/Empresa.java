@@ -1,27 +1,23 @@
 package com.backend.model;
 
 import jakarta.persistence.*;
-import lombok.*;
-import java.util.Date;
-import java.util.List;
+import lombok.Data;
 
+@Table(name="empresas")
 @Entity
 @Data
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
-@Table(name = "empresas")
 public class Empresa {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer idEmpresa;
-    private String razonSocial;
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    private Long id_empresa;
 
-    @Column(name = "direccion_fiscal")
-    private String direccionFiscal;
+    private Long id;
+    @Column(name="razon_social", length= 500, nullable = false)
+    private String razon_social;
+
+    @Column(name="direccion_fiscal", length= 500, nullable = false)
+    private String direccion_fiscal;
+
+    @Column(name="pais", length= 150, nullable = false)
     private String pais;
-
-    @OneToMany(mappedBy = "empresa")
-    private List<Vacante> vacantes;
 }

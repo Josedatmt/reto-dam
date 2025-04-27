@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+            style="-fx-padding: 20;">
+
+    <center>
+        <TableView fx:id="tableEmpresas"
+                   style="-fx-background-radius: 6; -fx-border-radius: 6;">
+            <columns>
+                <TableColumn text="ID" />
+                <TableColumn text="Razón Social" />
+                <TableColumn text="Dirección Fiscal"/>
+                <TableColumn text="País" />
+            </columns>
+        </TableView>
+    </center>
+
+    <bottom>
+        <HBox spacing="10" alignment="CENTER_RIGHT"
+              style="-fx-padding: 10;">
+            <Button text="Nueva Empresa"
+                    style="-fx-background-color: #3F51B5; -fx-text-fill: white; -fx-background-radius: 6; -fx-padding: 8 16;" />
+        </HBox>
+    </bottom>
+</BorderPane>

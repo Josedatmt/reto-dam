@@ -1,20 +1,22 @@
 package com.backend.model;
 
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.Data;
+import java.util.List;
 
+
+@Table(name="perfiles")
 @Entity
 @Data
-@Getter
-@Setter
-@Builder
-@NoArgsConstructor
-@AllArgsConstructor
-@Table(name = "perfiles")
 public class Perfil {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer idPerfil;
-    private String nombre;
-}
+    private Long id_perfil;
 
+    @Column(name = "nombre",length =100, nullable = false)
+    private String nombre;
+
+    @ManyToMany(mappedBy = "perfiles")
+    private List<Usuario> usuarios;
+
+}

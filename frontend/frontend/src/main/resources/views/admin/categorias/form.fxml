@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.paint.*?>
+
+<VBox xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+      spacing="20" prefWidth="450" alignment="TOP_CENTER" style="-fx-padding: 30; -fx-background-color: #f8f9fa;">
+
+
+    <Label text="Formulario de Categoría" style="-fx-font-size: 22px;">
+        <font>
+            <Font name="System Bold" size="22.0" />
+        </font>
+        <textFill>
+            <LinearGradient startX="0.0" startY="0.0" endX="1.0" endY="0.0">
+                <stops>
+                    <Stop color="#2c3e50" />
+                    <Stop color="#3498db" offset="1.0" />
+                </stops>
+            </LinearGradient>
+        </textFill>
+        <effect>
+            <DropShadow color="rgba(0,0,0,0.1)" radius="3" spread="0.5" />
+        </effect>
+    </Label>
+
+
+    <VBox style="-fx-background-color: white; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #e0e0e0; -fx-padding: 25; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 2);" spacing="15">
+        <VBox spacing="5">
+            <Label text="Nombre:" style="-fx-font-size: 14px; -fx-text-fill: #555;"/>
+            <TextField fx:id="txtNombre" promptText="Ingrese el nombre"
+                       style="-fx-background-radius: 4; -fx-border-radius: 4; -fx-border-color: #ddd; -fx-padding: 8 12; -fx-font-size: 14px;"/>
+        </VBox>
+
+        <VBox spacing="5">
+            <Label text="Descripción:" style="-fx-font-size: 14px; -fx-text-fill: #555;"/>
+            <TextArea fx:id="txtDescripcion" promptText="Ingrese la descripción"
+                      prefRowCount="4" wrapText="true"
+                      style="-fx-background-radius: 4; -fx-border-radius: 4; -fx-border-color: #ddd; -fx-padding: 8 12; -fx-font-size: 14px;"/>
+        </VBox>
+
+        <HBox spacing="15" alignment="CENTER_RIGHT" style="-fx-padding: 10 0 0 0;">
+            <Button text="Cancelar"
+                    style="-fx-background-color: transparent; -fx-text-fill: #e74c3c; -fx-border-color: #e74c3c; -fx-border-radius: 4; -fx-background-radius: 4; -fx-padding: 8 20; -fx-cursor: hand;"
+
+                  />
+
+            <Button text="Guardar" defaultButton="true"
+                    style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-background-radius: 4; -fx-padding: 8 20; -fx-font-weight: bold; -fx-cursor: hand;"
+
+                  />
+        </HBox>
+    </VBox>
+</VBox>

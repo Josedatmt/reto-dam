@@ -1,41 +1,30 @@
 package com.backend.service;
 
-import com.backend.dto.VacanteDTO;
-import com.backend.model.Empresa;
-import com.backend.model.EstadoVacante;
+import com.backend.model.EstatusVacante;
 import com.backend.model.Vacante;
-import com.backend.repository.VacanteRepository;
-import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import jakarta.transaction.Transactional;
 
 import java.util.List;
-import java.util.Optional;
 
-@Service
-public class VacanteService {
-    @Autowired
-    private VacanteRepository vacanteRepository;
+public interface VacanteService {
 
-    public List<Vacante> findAll() {
-        return vacanteRepository.findAll();
-    }
+    Vacante saveVacante(Vacante vacante);
 
-    public Optional<Vacante> findById(Integer id) {
-        return vacanteRepository.findById(id);
-    }
+    void deleteVacante(Long id_vacante);
 
-    public List<Vacante> findByEmpresa(Empresa empresa) {
-        return vacanteRepository.findByEmpresa(empresa);
-    }
+    List<Vacante> findAllVacantes();
 
-    public Vacante save(Vacante vacante) {
-        return vacanteRepository.save(vacante);
-    }
+    Vacante findById(Long id);
 
-    public void deleteById(Integer id) {
-        vacanteRepository.deleteById(id);
-    }
+    List<Vacante> findByEstatus(EstatusVacante estatus);
 
+    List<Vacante> findByEmpresaId(Long idEmpresa);
 
+    @Transactional
+    void cancelarVacante(Long idVacante);
+
+    @Transactional
+    void asignarVacante(Long idVacante, Long idSolicitud);
+
+    List<Vacante> buscarConFiltros(EstatusVacante estatusVacante, Long idCategoria, Long idEmpresa, String contrato);
 }

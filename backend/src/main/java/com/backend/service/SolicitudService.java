@@ -1,29 +1,21 @@
 package com.backend.service;
 
 import com.backend.model.Solicitud;
-import com.backend.repository.SolicitudRepository;
-import org.springframework.stereotype.Service;
-import org.springframework.beans.factory.annotation.Autowired;
-
 
 import java.util.List;
-import java.util.Optional;
 
-@Service
-public class SolicitudService {
+public interface SolicitudService {
+    Solicitud saveSolicitud(Solicitud solicitud);
 
-    @Autowired
-    private SolicitudRepository solicitudRepository;
+    void deleteSolicitud(Long id_solicitud);
 
-    public List<Solicitud> findAll() {
-        return solicitudRepository.findAll();
-    }
+    List<Solicitud> findAllSolicitud();
 
-    public Solicitud save(Solicitud solicitud) {
-        return solicitudRepository.save(solicitud);
-    }
+    Solicitud findById(Long idSolicitud);
 
-    public Optional<Solicitud> findById(Integer id) {
-        return solicitudRepository.findById(id);
-    }
+    void actualizarEstadoSolicitud(Long idSolicitud, int i);
+
+    List<Solicitud> findByUsuario(Long username);
+
+    void cancelarSolicitud(Long id, Long username);
 }

@@ -1,35 +1,37 @@
 package com.backend.model;
 
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.Data;
 import java.util.Date;
-import java.util.List;
 
 
+@Table(name="solicitudes")
 @Entity
 @Data
-@Getter
-@Setter
-@Builder
-@NoArgsConstructor
-@AllArgsConstructor
-@Table(name = "solicitudes")
 public class Solicitud {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer idSolicitud;
-    @Temporal(TemporalType.DATE)
+    private Long id_solicitud;
+
+    @Column(name = "fecha", nullable = false)
     private Date fecha;
+
+    @Column(name = "archivo", length = 500, nullable = false)
     private String archivo;
-    private String comentarios;
-    private Boolean estado;
+
+    @Column(name = "comentarios", length = 2000,nullable = true)
+    private Date comentarios;
+
+    @Column(name = "estado", nullable = false)
+    private EstadoSolicitud estado;
 
     @ManyToOne
-    @JoinColumn(name = "id_Vacante")
+    @JoinColumn(name = "username", nullable = false)
+    private Usuario usuario;
+
+    @ManyToOne
+    @JoinColumn(name = "id_vacante", nullable = false)
     private Vacante vacante;
 
-    @ManyToOne
-    @JoinColumn(name = "username")
-    private Usuario usuario;
-}
 
+}

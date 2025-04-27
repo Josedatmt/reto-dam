@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.paint.*?>
+
+<VBox xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+      spacing="20" prefWidth="500" alignment="TOP_CENTER" style="-fx-padding: 30; -fx-background-color: #f8fafc;">
+
+    <!-- Título con estilo profesional -->
+    <Label text="Registro de Vacante" style="-fx-font-size: 24px;">
+        <font>
+            <Font name="Segoe UI Semibold" size="24.0" />
+        </font>
+        <textFill>
+            <LinearGradient startX="0.0" startY="0.0" endX="1.0" endY="0.0">
+                <stops>
+                    <Stop color="#2563eb" />
+                    <Stop color="#1e40af" offset="1.0" />
+                </stops>
+            </LinearGradient>
+        </textFill>
+        <effect>
+            <DropShadow color="rgba(0,0,0,0.05)" radius="5" spread="0.3" />
+        </effect>
+    </Label>
+
+    <!-- Panel de formulario con sombra y bordes redondeados -->
+    <VBox style="-fx-background-color: white; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #e2e8f0; -fx-padding: 25; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 10, 0, 0, 3);" spacing="15">
+
+        <!-- Campo Nombre -->
+        <VBox spacing="5">
+            <Label text="Nombre de la Vacante:" style="-fx-font-size: 14px; -fx-text-fill: #475569;"/>
+            <TextField fx:id="txtNombre" promptText="Ingrese el nombre de la vacante"
+                       style="-fx-background-radius: 4; -fx-border-radius: 4; -fx-border-color: #cbd5e1; -fx-padding: 8 12; -fx-font-size: 14px;"/>
+        </VBox>
+
+        <!-- Campo Descripción -->
+        <VBox spacing="5">
+            <Label text="Descripción:" style="-fx-font-size: 14px; -fx-text-fill: #475569;"/>
+            <TextArea fx:id="txtDescripcion" promptText="Detalles de la vacante" wrapText="true" prefRowCount="4"
+                      style="-fx-background-radius: 4; -fx-border-radius: 4; -fx-border-color: #cbd5e1; -fx-padding: 8 12; -fx-font-size: 14px;"/>
+        </VBox>
+
+        <!-- Selector de Empresa -->
+        <VBox spacing="5">
+            <Label text="Empresa:" style="-fx-font-size: 14px; -fx-text-fill: #475569;"/>
+            <ComboBox fx:id="comboEmpresas" promptText="Seleccione una empresa"
+                      style="-fx-background-radius: 4; -fx-border-radius: 4; -fx-border-color: #cbd5e1; -fx-padding: 8 12; -fx-font-size: 14px;"/>
+        </VBox>
+
+        <!-- Selector de Categoría -->
+        <VBox spacing="5">
+            <Label text="Categoría:" style="-fx-font-size: 14px; -fx-text-fill: #475569;"/>
+            <ComboBox fx:id="comboCategorias" promptText="Seleccione una categoría"
+                      style="-fx-background-radius: 4; -fx-border-radius: 4; -fx-border-color: #cbd5e1; -fx-padding: 8 12; -fx-font-size: 14px;"/>
+        </VBox>
+
+        <!-- Botones de acción -->
+        <HBox spacing="15" alignment="CENTER_RIGHT" style="-fx-padding: 10 0 0 0;">
+            <Button text="Cancelar"
+                    style="-fx-background-color: transparent; -fx-text-fill: #dc2626; -fx-border-color: #dc2626; -fx-border-radius: 4; -fx-background-radius: 4; -fx-padding: 8 24; -fx-cursor: hand; -fx-font-size: 14px;"
+             />
+
+            <Button text="Guardar" defaultButton="true"
+                    style="-fx-background-color: #2563eb; -fx-text-fill: white; -fx-background-radius: 4; -fx-padding: 8 24; -fx-font-weight: bold; -fx-cursor: hand; -fx-font-size: 14px;"
+                   />
+        </HBox>
+    </VBox>
+</VBox>

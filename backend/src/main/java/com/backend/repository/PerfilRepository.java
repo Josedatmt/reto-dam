@@ -2,8 +2,9 @@ package com.backend.repository;
 
 import com.backend.model.Perfil;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
 
-@Repository
-public interface PerfilRepository extends JpaRepository<Perfil,Integer> {
+import java.util.Optional;
+
+public interface PerfilRepository extends JpaRepository <Perfil, Long> {
+    Optional<Perfil> findByNombre(String nombre);
 }

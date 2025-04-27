@@ -1,0 +1,2 @@
+package com.example.vacantesapp.models
+data class Vacante(val id: String, val titulo: String, val descripcion: String, val empresa: Empresa, val categoria: Categoria, val salario: String, val imagen: String?)

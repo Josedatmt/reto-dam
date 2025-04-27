@@ -1,30 +1,19 @@
 package com.backend.service;
 
 import com.backend.model.Usuario;
-import com.backend.repository.UsuarioRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
-import java.util.Optional;
 
-public class UsuarioService {
-    @Autowired
-    private UsuarioRepository usuarioRepository;
+public interface UsuarioService {
+    Usuario saveUsuario(Usuario usuario);
 
-    public List<Usuario> findAll() {
-        return usuarioRepository.findAll();
-    }
+    void deleteUsuario(Long id_usuario);
 
-    public Optional<Usuario> findByUsername(String username) {
-        return usuarioRepository.findById(username);
-    }
+    List<Usuario> findAllUsuarios();
 
-    public Usuario save(Usuario usuario) {
-        return usuarioRepository.save(usuario);
-    }
+    Usuario findById(Long id);
 
-    public void deleteByUsername(String username) {
-        usuarioRepository.deleteById(username);
+    Usuario updateUsuario(Long username, Usuario usuarioDetails);
 
-    }
+    boolean existsByEmail(String email);
 }

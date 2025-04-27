@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+
+<?import javafx.scene.shape.Circle?>
+<VBox xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.frontend.controllers.auth.LoginController"
+      spacing="20" alignment="CENTER" style="-fx-background-color: #f8f9fa; -fx-padding: 40;">
+
+
+    <VBox style="-fx-background-color: white; -fx-background-radius: 10; -fx-border-radius: 10; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 0); -fx-padding: 30; -fx-spacing: 20;" alignment="CENTER" prefWidth="350">
+
+
+        <StackPane>
+            <Circle radius="40" fill="linear-gradient(to right, #3498db, #2c3e50)"/>
+            <Text text="SV" fill="white" style="-fx-font-size: 24; -fx-font-weight: bold;"/>
+        </StackPane>
+
+
+        <Label text="INICIAR SESIÓN" style="-fx-font-size: 24px; -fx-text-fill: #2c3e50; -fx-font-weight: bold;"/>
+
+
+        <VBox spacing="15" style="-fx-padding: 10 0 0 0;" prefWidth="100">
+            <TextField fx:id="txtEmail" promptText="Correo electrónico"
+                       style="-fx-background-radius: 5; -fx-border-radius: 5; -fx-padding: 12; -fx-font-size: 14px;"/>
+
+            <PasswordField fx:id="txtPassword" promptText="Contraseña"
+                           style="-fx-background-radius: 5; -fx-border-radius: 5; -fx-padding: 12; -fx-font-size: 14px;"/>
+
+            <Button text="ACCEDER" onAction="#handleLogin" defaultButton="true"
+                    style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold; -fx-background-radius: 5; -fx-padding: 12; -fx-cursor: hand;"
+                   />
+        </VBox>
+
+
+        <HBox spacing="10" alignment="CENTER">
+            <Hyperlink text="¿Olvidó su contraseña?" style="-fx-text-fill: #7f8c8d; -fx-font-size: 13px;"/>
+            <Text text="•" fill="#7f8c8d"/>
+            <Hyperlink text="Registrarse" onAction="#handleRegisterLink" style="-fx-text-fill: #3498db; -fx-font-size: 13px; -fx-font-weight: bold;"/>
+        </HBox>
+    </VBox>
+</VBox>

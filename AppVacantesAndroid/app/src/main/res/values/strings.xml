@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">App-Vacantes-Android</string>
+        <string name="add_empresa">Añadir Empresa</string>
+        <string name="add_vacante">Añadir Vacante</string>
+    <string name="vacantes_disponibles" />
+    <string name="ver_vacantes" />
+    <string name="mis_solicitudes" />
+
+
+</resources>

@@ -2,43 +2,50 @@ package com.backend.model;
 
 
 import jakarta.persistence.*;
-import lombok.*;
-import java.util.Date;
+import lombok.Data;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
-import java.util.Date;
 
-
-@Data
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
-@Builder
-@Entity
 @Table(name="usuarios")
+@Entity
+@Data
 public class Usuario {
     @Id
-    private String username;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long username;
 
+    @Column(name = "nombre", length = 150, nullable = false)
     private String nombre;
+
+    @Column(name = "apellidos", length = 150, nullable = false)
     private String apellidos;
+
+    @Column(name = "email", length = 150, nullable = false)
     private String email;
+
+    @Column(name = "password", length = 150, nullable = false)
     private String password;
-    private boolean enabled;
-    @Temporal(TemporalType.DATE)
-    private Date fechaRegistro;
 
-    @OneToMany(mappedBy = "usuario")
-    private List<Solicitud> solicitudes;
+    @Column(name = "enabled", nullable = false)
+    private int enabled;
 
-    @ManyToMany
+    @Column(name = "fecha_registro", length = 1200, nullable = true)
+    private LocalDateTime fecha_registro;
+
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
-            name = "usuario_perfil",
+            name = "usuarioperfil",
             joinColumns = @JoinColumn(name = "username"),
-            inverseJoinColumns = @JoinColumn(name = "id_Perfil")
+            inverseJoinColumns = @JoinColumn(name = "id_perfil")
     )
-    private List<Perfil> perfiles;
+    private List<Perfil> perfiles = new ArrayList<>();
 
 
-}
+    public List<Perfil> getPerfiles() {
+        if (this.perfiles == null) {
+            this.perfiles = new ArrayList<>();
+        }
+        return this.perfiles;
+    }}

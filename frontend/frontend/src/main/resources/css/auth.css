@@ -1,0 +1,26 @@
+.root {
+    -fx-padding: 20;
+    -fx-spacing: 15;
+    -fx-background-color: #ecf0f1;
+}
+
+.title {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+}
+
+.text-field, .password-field, .text-area {
+    -fx-pref-width: 250px;
+}
+
+.button {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+    -fx-background-radius: 5;
+    -fx-padding: 8 15;
+}
+
+.hyperlink {
+    -fx-text-fill: #3498db;
+}

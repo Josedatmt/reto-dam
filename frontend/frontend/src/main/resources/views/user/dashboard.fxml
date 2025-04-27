@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.shape.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+            style="-fx-background-color: linear-gradient(to bottom, #f8f9fa, #e9ecef);">
+
+
+    <top>
+        <HBox style="-fx-background-color: linear-gradient(to right, #2c3e50, #3498db); -fx-padding: 12; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 0, 5, 10, 0);"
+              alignment="CENTER_LEFT" spacing="20">
+
+
+            <StackPane>
+                <Rectangle width="40" height="40" arcWidth="10" arcHeight="10"
+                           fill="linear-gradient(to bottom right, #e74c3c, #c0392b)"/>
+                <Text text="SV" fill="white" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+            </StackPane>
+
+
+            <Label text="PORTAL DE VACANTES"
+                   style="-fx-text-fill: white; -fx-font-size: 22px; -fx-font-weight: bold;"/>
+
+            <Region HBox.hgrow="ALWAYS"/>
+
+
+            <MenuBar style="-fx-background-color: transparent;">
+                <Menu text="MENÚ PRINCIPAL" style="-fx-text-fill: white; -fx-font-weight: bold;">
+                    <MenuItem text="Salir del sistema"
+                              style="-fx-text-fill: #2c3e50; -fx-font-weight: bold;"/>
+                </Menu>
+                <Menu text="ACCIONES RÁPIDAS" style="-fx-text-fill: white; -fx-font-weight: bold;">
+                    <MenuItem text="Mis Solicitudes"
+                              style="-fx-text-fill: #2c3e50; -fx-font-weight: bold;"/>
+                    <MenuItem text="Vacantes Disponibles"
+                              style="-fx-text-fill: #2c3e50; -fx-font-weight: bold;"/>
+                </Menu>
+            </MenuBar>
+        </HBox>
+    </top>
+
+
+    <center>
+        <StackPane>
+            <VBox alignment="CENTER" spacing="30">
+
+                <Label fx:id="lblWelcome"
+                       style="-fx-font-size: 36px; -fx-text-fill: #2c3e50; -fx-font-weight: bold; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 0, 2, 3, 0);"/>
+
+
+                <HBox spacing="30" alignment="CENTER">
+                    <VBox style="-fx-background-color: white; -fx-background-radius: 10; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 2); -fx-padding: 20;"
+                          alignment="CENTER" spacing="10" prefWidth="200">
+                        <Label text="Vacantes Activas" style="-fx-font-size: 16px; -fx-text-fill: #7f8c8d;"/>
+                        <Label text="24" style="-fx-font-size: 28px; -fx-text-fill: #2ecc71; -fx-font-weight: bold;"/>
+                    </VBox>
+
+                    <VBox style="-fx-background-color: white; -fx-background-radius: 10; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 2); -fx-padding: 20;"
+                          alignment="CENTER" spacing="10" prefWidth="200">
+                        <Label text="Mis Solicitudes" style="-fx-font-size: 16px; -fx-text-fill: #7f8c8d;"/>
+                        <Label text="3" style="-fx-font-size: 28px; -fx-text-fill: #3498db; -fx-font-weight: bold;"/>
+                    </VBox>
+                </HBox>
+
+
+                <HBox spacing="20" alignment="CENTER" style="-fx-padding: 30 0 0 0;">
+                    <Button text="VER VACANTES"
+                            style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold; -fx-padding: 15 30; -fx-background-radius: 6; -fx-cursor: hand;"
+                            />
+
+                    <Button text="MIS SOLICITUDES"
+                            style="-fx-background-color: #2ecc71; -fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold; -fx-padding: 15 30; -fx-background-radius: 6; -fx-cursor: hand;"
+                            />
+                </HBox>
+            </VBox>
+        </StackPane>
+    </center>
+
+
+    <bottom>
+        <HBox style="-fx-background-color: linear-gradient(to right, #2c3e50, #3498db); -fx-padding: 10;" alignment="CENTER">
+            <Label text="© 2025 SISTEMA DE VACANTES | Versión 1.0 | Usuario conectado: ADMIN"
+                   style="-fx-font-size: 12px; -fx-text-fill: white; -fx-font-weight: bold;"/>
+        </HBox>
+    </bottom>
+</BorderPane>
